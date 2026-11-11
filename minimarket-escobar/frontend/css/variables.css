@@ -1,0 +1,105 @@
+/* ============================================================
+   MINIMARKET ESCOBAR — Variables CSS
+   Paleta de colores, tipografía y espaciados del sistema de diseño
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  /* ── Colores principales ── */
+  --color-primary:        #23834B;   /* Verde principal — botones, elementos destacados */
+  --color-primary-dark:   #176638;   /* Verde oscuro — barra superior, encabezados */
+  --color-primary-light:  #E8F5EE;   /* Verde muy claro — fondos sutiles */
+  --color-primary-hover:  #1E7244;   /* Verde hover — efecto al pasar el cursor */
+
+  /* ── Colores de fondo ── */
+  --color-bg:             #F4F6F2;   /* Gris verdoso — fondo general de páginas */
+  --color-white:          #FFFFFF;   /* Blanco — fondo de tarjetas y formularios */
+  --color-bg-dark:        #EAEDE7;   /* Gris verdoso más oscuro */
+
+  /* ── Colores de texto ── */
+  --color-text:           #292D2A;   /* Negro suave — títulos y textos principales */
+  --color-text-secondary: #5C6360;   /* Gris oscuro — textos secundarios */
+  --color-text-muted:     #8A938F;   /* Gris claro — etiquetas, placeholders */
+
+  /* ── Colores de acento ── */
+  --color-warning:        #F2B544;   /* Amarillo — ofertas, promociones, etiquetas */
+  --color-warning-bg:     #FEF3DC;   /* Fondo amarillo claro */
+  --color-danger:         #D93025;   /* Rojo — sin stock, alertas críticas */
+  --color-danger-bg:      #FDECEA;   /* Fondo rojo claro */
+  --color-success:        #23834B;   /* Verde — confirmaciones, en stock */
+  --color-success-bg:     #E8F5EE;   /* Fondo verde claro */
+  --color-info:           #1565C0;   /* Azul — información */
+  --color-info-bg:        #E3F2FD;   /* Fondo azul claro */
+
+  /* ── Bordes y sombras ── */
+  --color-border:         #DDE2DB;   /* Borde sutil de tarjetas */
+  --color-border-focus:   #23834B;   /* Borde en foco de inputs */
+  --shadow-sm:            0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md:            0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-lg:            0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-card:          0 2px 8px rgba(41, 45, 42, 0.08);
+
+  /* ── Tipografía ── */
+  --font-heading:         'Poppins', sans-serif;
+  --font-body:            'Inter', sans-serif;
+
+  /* Tamaños */
+  --text-xs:    12px;   /* etiquetas, avisos pequeños */
+  --text-sm:    14px;   /* texto secundario, botones */
+  --text-base:  16px;   /* texto normal */
+  --text-lg:    18px;   /* subtítulos H3 */
+  --text-xl:    20px;
+  --text-2xl:   24px;   /* H2 */
+  --text-3xl:   28px;
+  --text-4xl:   32px;   /* H1 */
+
+  /* Pesos */
+  --weight-regular:    400;
+  --weight-semibold:   600;
+  --weight-bold:       700;
+
+  /* ── Espaciados ── */
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    20px;   /* entre componentes */
+  --space-6:    24px;
+  --space-7:    28px;
+  --space-8:    32px;   /* entre secciones */
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-16:   64px;
+
+  /* ── Radios de borde ── */
+  --radius-sm:    4px;
+  --radius-md:    6px;
+  --radius-lg:    8px;
+  --radius-xl:    12px;
+  --radius-2xl:   16px;
+  --radius-full:  9999px;
+
+  /* ── Alturas de componentes ── */
+  --btn-height-sm:   36px;
+  --btn-height:      44px;
+  --btn-height-lg:   48px;
+  --header-height:   80px;
+  --navbar-height:   48px;
+  --topbar-height:   40px;
+
+  /* ── Contenedores ── */
+  --container-max:   1200px;
+  --frame-desktop:   1440px;
+
+  /* ── Transiciones ── */
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.25s ease;
+  --transition-slow:   0.35s ease;
+
+  /* ── Z-index ── */
+  --z-dropdown:    100;
+  --z-sticky:      200;
+  --z-modal:       300;
+  --z-toast:       400;
+}

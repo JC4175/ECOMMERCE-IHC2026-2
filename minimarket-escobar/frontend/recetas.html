@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetas · Minimarket Escobar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="top-bar"><div class="container-main d-flex justify-content-between align-items-center"><span><i class="fa-solid fa-seedling me-1"></i> Tu minimarket de siempre, ahora más cerca.</span><span><i class="fa-regular fa-clock me-1"></i> Todos los días · 8:00 a 22:00</span></div></div>
+  <header class="header-main"><div class="container-main d-flex align-items-center justify-content-between"><a href="index.html" class="logo d-flex align-items-center text-decoration-none"><i class="fa-solid fa-basket-shopping logo-icon"></i><div class="logo-text"><span class="logo-mini">MINIMARKET</span><span class="logo-name">ESCOBAR</span></div></a><div class="header-search d-none d-lg-flex"><input type="text" class="form-control" placeholder="¿Qué necesitas para hoy?"><button class="btn btn-search"><i class="fa-solid fa-magnifying-glass"></i></button></div><div class="header-actions d-flex align-items-center gap-3"><a href="login.html" class="header-account d-none d-md-flex align-items-center text-decoration-none"><i class="fa-regular fa-user me-2"></i><div><small class="d-block text-muted" style="font-size:11px;">Hola, bienvenido</small><span class="fw-semibold" style="font-size:14px;">Mi cuenta</span></div></a><div class="header-divider d-none d-md-block"></div><a href="carrito.html" class="header-cart d-flex align-items-center text-decoration-none"><div class="position-relative"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></div><div class="ms-2 d-none d-md-block"><small class="d-block text-muted" style="font-size:11px;">Mi carrito (<span id="cartCount">0</span>)</small><span class="fw-bold" style="font-size:14px;">S/ <span id="cartTotal">0</span></span></div></a></div></div></header>
+  <nav class="navbar-main"><div class="container-main"><ul class="nav-links d-flex align-items-center gap-4 mb-0 list-unstyled"><li><a href="index.html" class="nav-link">Inicio</a></li><li><a href="recetas.html" class="nav-link active">Recetas</a></li><li><a href="mis-listas.html" class="nav-link">Mis listas</a></li><li><a href="categorias.html" class="nav-link"><i class="fa-solid fa-grid-2 me-1"></i> Categorías</a></li><li><a href="ofertas.html" class="nav-link nav-ofertas"><i class="fa-solid fa-tag me-1"></i> Ofertas</a></li></ul></div></nav>
+
+  <main class="section-recetas">
+    <div class="container-main">
+      <h1 class="page-title">Recetas y Platillos</h1>
+      <p class="text-muted mb-4">Descubre recetas deliciosas y encuentra todos sus ingredientes en un solo lugar</p>
+
+      <!-- Filtros de tipo -->
+      <div class="product-tabs mb-4">
+        <button class="tab-btn active">Todas</button>
+        <button class="tab-btn">Desayunos</button>
+        <button class="tab-btn">Almuerzos</button>
+        <button class="tab-btn">Cenas</button>
+        <button class="tab-btn">Rápidas</button>
+        <button class="tab-btn">Veganas</button>
+      </div>
+
+      <!-- Grid de recetas -->
+      <div class="row g-4">
+        <!-- Receta 1: Lomo Saltado -->
+        <div class="col-md-4">
+          <div class="card-receta">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=250&fit=crop" alt="Lomo Saltado" class="card-receta-img">
+            <div class="card-receta-body">
+              <h3>Lomo Saltado</h3>
+              <p>Un clásico peruano con carne jugosa, papas doradas y todo el sabor de casa.</p>
+              <div class="card-receta-meta">
+                <span><i class="fa-regular fa-clock me-1"></i> 35 min</span>
+                <span><i class="fa-solid fa-users me-1"></i> 4 porciones</span>
+              </div>
+              <a href="receta-detalle.html" class="btn btn-primary-custom w-100 mt-3">Ver ingredientes <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Receta 2 -->
+        <div class="col-md-4">
+          <div class="card-receta">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop" alt="Ensalada fresca de quinoa" class="card-receta-img">
+            <div class="card-receta-body">
+              <h3>Ensalada fresca de quinoa</h3>
+              <p>Quinoa, vegetales frescos y un toque de limón para una opción ligera y nutritiva.</p>
+              <div class="card-receta-meta"><span><i class="fa-regular fa-clock me-1"></i> 20 min</span><span><i class="fa-solid fa-users me-1"></i> 2 porciones</span></div>
+              <a href="receta-detalle.html" class="btn btn-primary-custom w-100 mt-3">Ver ingredientes <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Receta 3 -->
+        <div class="col-md-4">
+          <div class="card-receta">
+            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&h=250&fit=crop" alt="Arroz con pollo" class="card-receta-img">
+            <div class="card-receta-body">
+              <h3>Arroz con pollo</h3>
+              <p>Arroz al culantro con pollo doradito, arvejas y el sabor de nuestra cocina.</p>
+              <div class="card-receta-meta"><span><i class="fa-regular fa-clock me-1"></i> 50 min</span><span><i class="fa-solid fa-users me-1"></i> 4 porciones</span></div>
+              <a href="receta-detalle.html" class="btn btn-primary-custom w-100 mt-3">Ver ingredientes <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Receta 4 -->
+        <div class="col-md-4">
+          <div class="card-receta">
+            <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=250&fit=crop" alt="Tallarines verdes" class="card-receta-img">
+            <div class="card-receta-body">
+              <h3>Tallarines verdes</h3>
+              <p>Pasta con una cremosa salsa de albahaca y espinaca, lista para compartir.</p>
+              <div class="card-receta-meta"><span><i class="fa-regular fa-clock me-1"></i> 30 min</span><span><i class="fa-solid fa-users me-1"></i> 4 porciones</span></div>
+              <a href="receta-detalle.html" class="btn btn-primary-custom w-100 mt-3">Ver ingredientes <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Receta 5 -->
+        <div class="col-md-4">
+          <div class="card-receta">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop" alt="Tortilla de verduras" class="card-receta-img">
+            <div class="card-receta-body">
+              <h3>Tortilla de verduras</h3>
+              <p>Una tortilla doradita con verduras de temporada, sencilla y deliciosa.</p>
+              <div class="card-receta-meta"><span><i class="fa-regular fa-clock me-1"></i> 25 min</span><span><i class="fa-solid fa-users me-1"></i> 2 porciones</span></div>
+              <a href="receta-detalle.html" class="btn btn-primary-custom w-100 mt-3">Ver ingredientes <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Receta 6 -->
+        <div class="col-md-4">
+          <div class="card-receta">
+            <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=250&fit=crop" alt="Pollo al horno" class="card-receta-img">
+            <div class="card-receta-body">
+              <h3>Pollo al horno</h3>
+              <p>Pollo jugoso al romero con papas al horno. Ideal para un almuerzo en familia.</p>
+              <div class="card-receta-meta"><span><i class="fa-regular fa-clock me-1"></i> 60 min</span><span><i class="fa-solid fa-users me-1"></i> 4 porciones</span></div>
+              <a href="receta-detalle.html" class="btn btn-primary-custom w-100 mt-3">Ver ingredientes <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="section-beneficios"><div class="container-main"><div class="row g-4 text-center"><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-truck-fast beneficio-icon"></i><h3>De nuestra tienda a tu puerta</h3><p>Elige tu dirección y revisa la cobertura.</p></div></div><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-leaf beneficio-icon"></i><h3>Frescura que se nota</h3><p>Seleccionamos cada producto para ti.</p></div></div><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-shield-check beneficio-icon"></i><h3>Compra con tranquilidad</h3><p>Tus datos y pagos siempre protegidos.</p></div></div></div></div></section>
+  <footer class="footer-main"><div class="container-main"><div class="row g-4"><div class="col-md-3"><div class="footer-logo d-flex align-items-center mb-3"><i class="fa-solid fa-basket-shopping logo-icon"></i><div class="logo-text"><span class="logo-mini">MINIMARKET</span><span class="logo-name">ESCOBAR</span></div></div><p class="footer-desc">Lo que necesitas, cerca de ti.</p><div class="footer-social"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-facebook"></i></a></div></div><div class="col-md-3"><h4>Compra con nosotros</h4><ul class="footer-links"><li><a href="categorias.html">Todas las categorías</a></li><li><a href="ofertas.html">Ofertas de la semana</a></li><li><a href="recetas.html">Recetas para inspirarte</a></li><li><a href="mis-listas.html">Mis listas de compras</a></li></ul></div><div class="col-md-3"><h4>¿Cómo te ayudamos?</h4><ul class="footer-links"><li><a href="#">Despachos y cobertura</a></li><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Cambios y devoluciones</a></li><li><a href="#">Términos y condiciones</a></li></ul></div><div class="col-md-3"><h4>Estamos para ayudarte</h4><p><i class="fa-regular fa-envelope me-2"></i> hola@minimarketescobar.cl</p><p>Lunes a domingo · 8:00 a 22:00 h</p><a href="#" class="footer-chat"><i class="fa-regular fa-comment me-1"></i> Conversemos</a></div></div><hr class="footer-divider"><div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap"><span>© 2026 Minimarket Escobar.</span><div class="footer-payment"><i class="fa-solid fa-lock me-1"></i> Pago seguro <span class="ms-2 fw-bold">VISA Mastercard</span></div></div></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

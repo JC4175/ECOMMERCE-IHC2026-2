@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago · Minimarket Escobar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="top-bar"><div class="container-main d-flex justify-content-between align-items-center"><span><i class="fa-solid fa-seedling me-1"></i> Tu minimarket de siempre, ahora más cerca.</span><span><i class="fa-regular fa-clock me-1"></i> Todos los días · 8:00 a 22:00</span></div></div>
+  <header class="header-main"><div class="container-main d-flex align-items-center justify-content-between"><a href="index.html" class="logo d-flex align-items-center text-decoration-none"><i class="fa-solid fa-basket-shopping logo-icon"></i><div class="logo-text"><span class="logo-mini">MINIMARKET</span><span class="logo-name">ESCOBAR</span></div></a><div class="header-search d-none d-lg-flex"><input type="text" class="form-control" placeholder="¿Qué necesitas para hoy?"><button class="btn btn-search"><i class="fa-solid fa-magnifying-glass"></i></button></div><div class="header-actions d-flex align-items-center gap-3"><a href="login.html" class="header-account d-none d-md-flex align-items-center text-decoration-none"><i class="fa-regular fa-user me-2"></i><div><small class="d-block text-muted" style="font-size:11px;">Hola, bienvenido</small><span class="fw-semibold" style="font-size:14px;">Mi cuenta</span></div></a></div></div></header>
+  <nav class="navbar-main"><div class="container-main d-flex align-items-center justify-content-between"><ul class="nav-links d-flex align-items-center gap-4 mb-0 list-unstyled"><li><a href="index.html" class="nav-link active">Inicio</a></li><li><a href="recetas.html" class="nav-link">Recetas</a></li><li><a href="mis-listas.html" class="nav-link">Mis listas</a></li><li><a href="categorias.html" class="nav-link"><i class="fa-solid fa-grid-2 me-1"></i> Categorías</a></li><li><a href="ofertas.html" class="nav-link nav-ofertas"><i class="fa-solid fa-tag me-1"></i> Ofertas</a></li></ul><nav aria-label="breadcrumb" class="d-none d-md-block"><ol class="breadcrumb mb-0" style="font-size:13px;"><li class="breadcrumb-item"><a href="index.html">Inicio</a></li><li class="breadcrumb-item"><a href="carrito.html">Carrito</a></li><li class="breadcrumb-item"><a href="checkout.html">Finalizar compra</a></li><li class="breadcrumb-item active">Pago</li></ol></nav></div></nav>
+
+  <main class="section-checkout">
+    <div class="container-main">
+      <h1 class="page-title">Finalizar compra</h1>
+      <p class="text-muted mb-4">Elige cómo pagar y revisa tu pedido antes de confirmar.</p>
+
+      <!-- Stepper -->
+      <div class="checkout-stepper mb-5">
+        <div class="step completed"><span class="step-number"><i class="fa-solid fa-check"></i></span><span class="step-label">Carrito</span></div>
+        <div class="step-line completed"></div>
+        <div class="step completed"><span class="step-number"><i class="fa-solid fa-check"></i></span><span class="step-label">Datos de entrega</span></div>
+        <div class="step-line active"></div>
+        <div class="step active"><span class="step-number">3</span><span class="step-label">Pago</span></div>
+        <div class="step-line"></div>
+        <div class="step"><span class="step-number">4</span><span class="step-label">Confirmación</span></div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <!-- Método de pago -->
+          <div class="checkout-section">
+            <h2 class="checkout-section-title">Método de pago</h2>
+            <p class="text-muted">Métodos disponibles · tarjeta seleccionada en este ejemplo.</p>
+            <div class="row g-3 mb-4">
+              <div class="col-3"><div class="pago-option-card selected"><input type="radio" name="metodoPago" value="tarjeta" checked><br><strong>Tarjeta</strong></div></div>
+              <div class="col-3"><div class="pago-option-card"><input type="radio" name="metodoPago" value="yape"><br><strong>Yape</strong></div></div>
+              <div class="col-3"><div class="pago-option-card"><input type="radio" name="metodoPago" value="plin"><br><strong>Plin</strong></div></div>
+              <div class="col-3"><div class="pago-option-card"><input type="radio" name="metodoPago" value="efectivo"><br><strong>Efectivo contra entrega</strong></div></div>
+            </div>
+
+            <!-- Formulario tarjeta -->
+            <div id="formTarjeta">
+              <h3 class="fw-semibold mb-3">Tarjeta de crédito o débito</h3>
+              <div class="mb-3">
+                <label for="numTarjeta" class="form-label fw-semibold">Número de tarjeta</label>
+                <input type="text" class="form-control form-control-lg" id="numTarjeta" placeholder="•••• •••• •••• 4242" maxlength="19">
+              </div>
+              <div class="mb-3">
+                <label for="nombreTarjeta" class="form-label fw-semibold">Nombre en la tarjeta</label>
+                <input type="text" class="form-control form-control-lg" id="nombreTarjeta" placeholder="ANA ESCOBAR">
+              </div>
+              <div class="row g-3">
+                <div class="col-6">
+                  <label for="vencimiento" class="form-label fw-semibold">Vencimiento</label>
+                  <input type="text" class="form-control form-control-lg" id="vencimiento" placeholder="12 / 28" maxlength="7">
+                </div>
+                <div class="col-6">
+                  <label for="cvv" class="form-label fw-semibold">CVV</label>
+                  <input type="password" class="form-control form-control-lg" id="cvv" placeholder="•••" maxlength="4">
+                </div>
+              </div>
+              <div class="alert alert-warning mt-3" role="alert">
+                <i class="fa-solid fa-circle-info me-2"></i>
+                <strong>Vista ilustrativa · no se realiza ningún cobro</strong><br>
+                Los campos no capturan datos ni procesan pagos reales.
+              </div>
+            </div>
+          </div>
+
+          <!-- Dirección de entrega (resumen) -->
+          <div class="checkout-section">
+            <div class="d-flex justify-content-between align-items-center">
+              <h2 class="checkout-section-title mb-0">Dirección de entrega</h2>
+              <a href="checkout.html" class="link-green">Cambiar dirección</a>
+            </div>
+            <div class="mt-3">
+              <strong>Ana Escobar</strong> · Av. Los Jardines 123, Dpto. 201<br>
+              San Juan de Lurigancho, Lima · Frente al parque<br>
+              <strong class="text-success">Delivery · S/ 6.00</strong><br>
+              <small class="text-muted">Dirección de ejemplo para el recorrido del prototipo.</small>
+            </div>
+          </div>
+
+          <a href="checkout.html" class="btn btn-link text-muted mt-2"><i class="fa-solid fa-arrow-left me-1"></i> Volver a datos de entrega</a>
+        </div>
+
+        <!-- Resumen del pedido -->
+        <div class="col-lg-5">
+          <div class="resumen-card sticky-top" style="top:20px;">
+            <h2 class="resumen-titulo">Resumen del pedido</h2>
+            <p class="text-muted mb-3">4 productos · 6 unidades</p>
+            <div class="resumen-productos">
+              <div class="resumen-producto"><img src="https://images.unsplash.com/photo-1560155016-bd4879ae8f21?w=60&h=60&fit=crop" alt="Palta Hass"><div class="resumen-producto-info"><strong>Palta Hass</strong><small class="d-block text-muted">Venta por kilo · 1 kg</small><small class="text-muted">1 × S/ 10.00</small></div><span class="fw-bold">S/ 10.00</span></div>
+              <div class="resumen-producto"><img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=60&h=60&fit=crop" alt="Leche entera"><div class="resumen-producto-info"><strong>Leche entera</strong><small class="d-block text-muted">Caja · 1 litro</small><small class="text-muted">2 × S/ 8.50</small></div><span class="fw-bold">S/ 17.00</span></div>
+              <div class="resumen-producto"><img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=60&h=60&fit=crop" alt="Huevos de campo"><div class="resumen-producto-info"><strong>Huevos de campo</strong><small class="d-block text-muted">Bandeja · 12 unidades</small><small class="text-muted">1 × S/ 11.57</small></div><span class="fw-bold">S/ 11.57</span></div>
+              <div class="resumen-producto"><img src="https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=60&h=60&fit=crop" alt="Pasta espirales"><div class="resumen-producto-info"><strong>Pasta espirales</strong><small class="d-block text-muted">Bolsa · 400 g</small><small class="text-muted">2 × S/ 4.50</small></div><span class="fw-bold">S/ 9.00</span></div>
+            </div>
+            <hr>
+            <div class="resumen-linea"><span>Subtotal</span><span>S/ 47.57</span></div>
+            <div class="resumen-linea"><span>Costo de envío · Delivery</span><span>S/ 6.00</span></div>
+            <div class="resumen-linea"><span>Descuentos</span><span>S/ 0.00</span></div>
+            <div class="resumen-total"><span>Total</span><span class="resumen-total-precio">S/ 53.57</span></div>
+            <small class="text-muted d-block mb-3">Precios incluyen IGV.</small>
+            <a href="pago-exitoso.html" class="btn btn-primary-custom w-100 btn-lg">Confirmar pedido <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            <small class="text-muted d-block mt-2">En productos a granel, el total puede variar según el peso final.</small>
+            <div class="resumen-seguridad mt-3"><i class="fa-solid fa-shield-check text-success me-2"></i><div><strong>Compra con tranquilidad</strong><br><small>Tus datos y pagos siempre protegidos.</small></div></div>
+            <div class="mt-3 p-2 border rounded" style="font-size:13px;"><span class="text-muted">Método seleccionado</span><br><strong>Tarjeta · terminada en 4242</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="section-beneficios"><div class="container-main"><div class="row g-4 text-center"><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-truck-fast beneficio-icon"></i><h3>De nuestra tienda a tu puerta</h3><p>Elige tu dirección y revisa la cobertura.</p></div></div><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-leaf beneficio-icon"></i><h3>Frescura que se nota</h3><p>Seleccionamos cada producto para ti.</p></div></div><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-shield-check beneficio-icon"></i><h3>Compra con tranquilidad</h3><p>Tus datos y pagos siempre protegidos.</p></div></div></div></div></section>
+  <footer class="footer-main"><div class="container-main"><div class="row g-4"><div class="col-md-3"><div class="footer-logo d-flex align-items-center mb-3"><i class="fa-solid fa-basket-shopping logo-icon"></i><div class="logo-text"><span class="logo-mini">MINIMARKET</span><span class="logo-name">ESCOBAR</span></div></div><p class="footer-desc">Lo que necesitas, cerca de ti.</p></div><div class="col-md-3"><h4>Compra con nosotros</h4><ul class="footer-links"><li><a href="categorias.html">Todas las categorías</a></li><li><a href="ofertas.html">Ofertas de la semana</a></li><li><a href="recetas.html">Recetas para inspirarte</a></li><li><a href="mis-listas.html">Mis listas de compras</a></li></ul></div><div class="col-md-3"><h4>¿Cómo te ayudamos?</h4><ul class="footer-links"><li><a href="#">Despachos y cobertura</a></li><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Cambios y devoluciones</a></li><li><a href="#">Términos y condiciones</a></li></ul></div><div class="col-md-3"><h4>Estamos para ayudarte</h4><p><i class="fa-regular fa-envelope me-2"></i> hola@minimarketescobar.cl</p><p>Lunes a domingo · 8:00 a 22:00 h</p></div></div><hr class="footer-divider"><div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap"><span>© 2026 Minimarket Escobar. Todos los derechos reservados.</span><div class="footer-payment"><i class="fa-solid fa-lock me-1"></i> Pago seguro <span class="ms-2 fw-bold">VISA Mastercard</span></div></div></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

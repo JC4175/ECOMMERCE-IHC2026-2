@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo · Minimarket Escobar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="top-bar">
+    <div class="container-main d-flex justify-content-between align-items-center">
+      <span><i class="fa-solid fa-seedling me-1"></i> Tu minimarket de siempre, ahora más cerca.</span>
+      <span><i class="fa-regular fa-clock me-1"></i> Todos los días · 8:00 a 22:00</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header-main">
+    <div class="container-main d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+        <i class="fa-solid fa-basket-shopping logo-icon"></i>
+        <div class="logo-text"><span class="logo-mini">MINIMARKET</span><span class="logo-name">ESCOBAR</span></div>
+      </a>
+      <div class="header-location d-none d-md-flex align-items-center">
+        <i class="fa-solid fa-location-dot me-2"></i>
+        <div><small class="d-block text-muted" style="font-size:11px;">¿Dónde entregamos?</small><span class="fw-semibold" style="font-size:14px;">Ingresa tu dirección <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></span></div>
+      </div>
+      <div class="header-search d-none d-lg-flex">
+        <input type="text" class="form-control" placeholder="¿Qué necesitas para hoy?" aria-label="Buscar productos">
+        <button class="btn btn-search" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <div class="header-actions d-flex align-items-center gap-3">
+        <a href="login.html" class="header-account d-none d-md-flex align-items-center text-decoration-none">
+          <i class="fa-regular fa-user me-2"></i>
+          <div><small class="d-block text-muted" style="font-size:11px;">Hola, bienvenido</small><span class="fw-semibold" style="font-size:14px;">Mi cuenta</span></div>
+        </a>
+        <div class="header-divider d-none d-md-block"></div>
+        <a href="carrito.html" class="header-cart d-flex align-items-center text-decoration-none">
+          <div class="position-relative"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></div>
+          <div class="ms-2 d-none d-md-block"><small class="d-block text-muted" style="font-size:11px;">Mi carrito (<span id="cartCount">0</span>)</small><span class="fw-bold" style="font-size:14px;">S/ <span id="cartTotal">0</span></span></div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar-main">
+    <div class="container-main d-flex align-items-center justify-content-between">
+      <ul class="nav-links d-flex align-items-center gap-4 mb-0 list-unstyled">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="recetas.html" class="nav-link">Recetas</a></li>
+        <li><a href="mis-listas.html" class="nav-link">Mis listas</a></li>
+        <li><a href="categorias.html" class="nav-link active"><i class="fa-solid fa-grid-2 me-1"></i> Categorías <i class="fa-solid fa-chevron-down ms-1" style="font-size:10px;"></i></a></li>
+        <li><a href="ofertas.html" class="nav-link nav-ofertas"><i class="fa-solid fa-tag me-1"></i> Ofertas</a></li>
+      </ul>
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="d-none d-md-block">
+        <ol class="breadcrumb mb-0" style="font-size:13px;">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="categorias.html">Categorías</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Todos los productos</li>
+        </ol>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <main class="section-catalogo">
+    <div class="container-main">
+      <h1 class="page-title">Nuestros productos</h1>
+      <p class="text-muted mb-4">Frescura, calidad y todo lo que necesitas para tu día a día, en un solo lugar.</p>
+
+      <!-- Buscador grande -->
+      <div class="catalogo-search mb-4">
+        <div class="input-group">
+          <span class="input-group-text bg-white"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+          <input type="text" class="form-control form-control-lg" id="searchProductos" placeholder="Busca por producto, marca o categoría" aria-label="Buscar productos">
+          <button class="btn btn-primary-custom px-4">Buscar productos</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- SIDEBAR FILTROS -->
+        <div class="col-lg-3 mb-4">
+          <div class="filtros-sidebar">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="filtros-title"><i class="fa-solid fa-sliders me-2"></i>Filtros</h3>
+              <button class="btn btn-sm btn-link text-muted" id="limpiarFiltros">Limpiar</button>
+            </div>
+
+            <!-- Categorías -->
+            <div class="filtro-grupo">
+              <h4>Categorías</h4>
+              <div class="filtro-option active-filter">
+                <label><input type="radio" name="categoria" value="todos" checked> Todos los productos</label>
+                <span class="filtro-count">204</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="cat" value="frutas"> Frutas y verduras</label>
+                <span class="filtro-count">32</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="cat" value="lacteos"> Lácteos</label>
+                <span class="filtro-count">24</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="cat" value="carnes"> Carnes</label>
+                <span class="filtro-count">18</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="cat" value="bebidas"> Bebidas</label>
+                <span class="filtro-count">36</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="cat" value="abarrotes"> Abarrotes</label>
+                <span class="filtro-count">48</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="cat" value="limpieza"> Limpieza</label>
+                <span class="filtro-count">22</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="cat" value="snacks"> Snacks</label>
+                <span class="filtro-count">24</span>
+              </div>
+            </div>
+
+            <!-- Rango de precio -->
+            <div class="filtro-grupo">
+              <h4>Rango de precio</h4>
+              <div class="d-flex gap-2 mb-2">
+                <div>
+                  <label class="form-label" style="font-size:12px;">Desde</label>
+                  <input type="number" class="form-control form-control-sm" value="0" min="0" placeholder="S/ 0">
+                </div>
+                <div>
+                  <label class="form-label" style="font-size:12px;">Hasta</label>
+                  <input type="number" class="form-control form-control-sm" value="100" min="0" placeholder="S/ 100">
+                </div>
+              </div>
+              <input type="range" class="form-range" min="0" max="100" value="100" id="precioRange">
+              <button class="btn btn-outline-success btn-sm w-100 mt-2">Aplicar rango</button>
+            </div>
+
+            <!-- Disponibilidad -->
+            <div class="filtro-grupo">
+              <h4>Disponibilidad</h4>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="disp" value="stock" checked> En stock</label>
+                <span class="filtro-count">192</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="disp" value="agotados"> Agotados</label>
+                <span class="filtro-count">12</span>
+              </div>
+              <div class="filtro-option">
+                <label><input type="checkbox" name="disp" value="ofertas"> Solo ofertas</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRID DE PRODUCTOS -->
+        <div class="col-lg-9">
+          <!-- Barra de control -->
+          <div class="catalogo-control d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted" style="font-size:14px;">Mostrando 1–12 de 204 productos</span>
+            <div class="d-flex align-items-center gap-2">
+              <!-- Tabs de orden -->
+              <div class="product-tabs">
+                <button class="tab-btn active">Recomendados</button>
+                <button class="tab-btn">Menor precio</button>
+                <button class="tab-btn">Mayor precio</button>
+                <button class="tab-btn">Más vendidos</button>
+              </div>
+              <div class="d-none d-md-flex align-items-center gap-2 ms-3">
+                <label style="font-size:13px;white-space:nowrap;">Ordenar por:</label>
+                <select class="form-select form-select-sm" style="width:160px;">
+                  <option>Recomendados</option>
+                  <option>Menor precio</option>
+                  <option>Mayor precio</option>
+                  <option>Más vendidos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Productos -->
+          <div class="row g-3" id="productosGrid">
+            <!-- Producto 1 -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="card-producto">
+                <div class="card-producto-img">
+                  <span class="badge-descuento">-20%</span>
+                  <button class="btn-favorito" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1560155016-bd4879ae8f21?w=200&h=200&fit=crop" alt="Palta Hass">
+                </div>
+                <div class="card-producto-body">
+                  <span class="card-producto-cat">FRUTAS Y VERDURAS</span>
+                  <h3 class="card-producto-nombre">Palta Hass</h3>
+                  <p class="card-producto-desc">Venta por kilo</p>
+                  <div class="card-producto-precio">
+                    <span class="precio-actual">S/ 10.00</span>
+                    <span class="precio-anterior">S/12.50</span>
+                  </div>
+                  <div class="card-producto-cantidad">
+                    <span style="font-size:12px;">Cantidad</span>
+                    <div class="cantidad-control">
+                      <button class="btn-qty" aria-label="Disminuir">−</button>
+                      <input type="number" value="1" min="1" class="qty-input" aria-label="Cantidad">
+                      <button class="btn-qty" aria-label="Aumentar">+</button>
+                    </div>
+                  </div>
+                  <button class="btn btn-agregar" onclick="agregarAlCarrito(1)"><i class="fa-solid fa-plus me-1"></i> Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="card-producto">
+                <div class="card-producto-img">
+                  <button class="btn-favorito" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=200&h=200&fit=crop" alt="Leche entera">
+                </div>
+                <div class="card-producto-body">
+                  <span class="card-producto-cat">LÁCTEOS</span>
+                  <h3 class="card-producto-nombre">Leche entera</h3>
+                  <p class="card-producto-desc">Caja · 1 litro</p>
+                  <div class="card-producto-precio"><span class="precio-actual">S/ 8.50</span></div>
+                  <div class="card-producto-cantidad">
+                    <span style="font-size:12px;">Cantidad</span>
+                    <div class="cantidad-control"><button class="btn-qty">−</button><input type="number" value="1" min="1" class="qty-input"><button class="btn-qty">+</button></div>
+                  </div>
+                  <button class="btn btn-agregar" onclick="agregarAlCarrito(2)"><i class="fa-solid fa-plus me-1"></i> Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="card-producto">
+                <div class="card-producto-img">
+                  <span class="badge-descuento">-11%</span>
+                  <button class="btn-favorito"><i class="fa-regular fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=200&h=200&fit=crop" alt="Huevos de campo">
+                </div>
+                <div class="card-producto-body">
+                  <span class="card-producto-cat">ABARROTES</span>
+                  <h3 class="card-producto-nombre">Huevos de campo</h3>
+                  <p class="card-producto-desc">Bandeja · 12 unidades</p>
+                  <div class="card-producto-precio"><span class="precio-actual">S/ 11.57</span><span class="precio-anterior">S/13.00</span></div>
+                  <div class="card-producto-cantidad"><span style="font-size:12px;">Cantidad</span><div class="cantidad-control"><button class="btn-qty">−</button><input type="number" value="1" min="1" class="qty-input"><button class="btn-qty">+</button></div></div>
+                  <button class="btn btn-agregar" onclick="agregarAlCarrito(3)"><i class="fa-solid fa-plus me-1"></i> Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 4 -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="card-producto">
+                <div class="card-producto-img">
+                  <span class="badge-descuento">-23%</span>
+                  <button class="btn-favorito"><i class="fa-regular fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=200&h=200&fit=crop" alt="Pasta espirales">
+                </div>
+                <div class="card-producto-body">
+                  <span class="card-producto-cat">ABARROTES</span>
+                  <h3 class="card-producto-nombre">Pasta espirales</h3>
+                  <p class="card-producto-desc">Bolsa · 400 g</p>
+                  <div class="card-producto-precio"><span class="precio-actual">S/ 4.50</span><span class="precio-anterior">S/5.80</span></div>
+                  <div class="card-producto-cantidad"><span style="font-size:12px;">Cantidad</span><div class="cantidad-control"><button class="btn-qty">−</button><input type="number" value="1" min="1" class="qty-input"><button class="btn-qty">+</button></div></div>
+                  <button class="btn btn-agregar" onclick="agregarAlCarrito(4)"><i class="fa-solid fa-plus me-1"></i> Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 5 -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="card-producto">
+                <div class="card-producto-img">
+                  <button class="btn-favorito"><i class="fa-regular fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=200&h=200&fit=crop" alt="Jugo de naranja">
+                </div>
+                <div class="card-producto-body">
+                  <span class="card-producto-cat">BEBIDAS</span>
+                  <h3 class="card-producto-nombre">Jugo de naranja</h3>
+                  <p class="card-producto-desc">Botella · 1 litro</p>
+                  <div class="card-producto-precio"><span class="precio-actual">S/ 6.00</span></div>
+                  <div class="card-producto-cantidad"><span style="font-size:12px;">Cantidad</span><div class="cantidad-control"><button class="btn-qty">−</button><input type="number" value="1" min="1" class="qty-input"><button class="btn-qty">+</button></div></div>
+                  <button class="btn btn-agregar" onclick="agregarAlCarrito(5)"><i class="fa-solid fa-plus me-1"></i> Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 6 -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="card-producto">
+                <div class="card-producto-img">
+                  <button class="btn-favorito"><i class="fa-regular fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop" alt="Arroz extra Costeño">
+                </div>
+                <div class="card-producto-body">
+                  <span class="card-producto-cat">ABARROTES</span>
+                  <h3 class="card-producto-nombre">Arroz extra Costeño</h3>
+                  <p class="card-producto-desc">Bolsa · 1 kg</p>
+                  <div class="card-producto-precio"><span class="precio-actual">S/ 4.50</span></div>
+                  <div class="card-producto-cantidad"><span style="font-size:12px;">Cantidad</span><div class="cantidad-control"><button class="btn-qty">−</button><input type="number" value="1" min="1" class="qty-input"><button class="btn-qty">+</button></div></div>
+                  <button class="btn btn-agregar" onclick="agregarAlCarrito(6)"><i class="fa-solid fa-plus me-1"></i> Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 7 -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="card-producto">
+                <div class="card-producto-img">
+                  <button class="btn-favorito"><i class="fa-regular fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=200&h=200&fit=crop" alt="Tomate italiano">
+                </div>
+                <div class="card-producto-body">
+                  <span class="card-producto-cat">FRUTAS Y VERDURAS</span>
+                  <h3 class="card-producto-nombre">Tomate italiano</h3>
+                  <p class="card-producto-desc">Venta por kilo</p>
+                  <div class="card-producto-precio"><span class="precio-actual">S/ 5.90</span></div>
+                  <div class="card-producto-cantidad"><span style="font-size:12px;">Cantidad</span><div class="cantidad-control"><button class="btn-qty">−</button><input type="number" value="1" min="1" class="qty-input"><button class="btn-qty">+</button></div></div>
+                  <button class="btn btn-agregar" onclick="agregarAlCarrito(7)"><i class="fa-solid fa-plus me-1"></i> Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 8 -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="card-producto">
+                <div class="card-producto-img">
+                  <button class="btn-favorito"><i class="fa-regular fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=200&h=200&fit=crop" alt="Plátano de seda">
+                </div>
+                <div class="card-producto-body">
+                  <span class="card-producto-cat">FRUTAS Y VERDURAS</span>
+                  <h3 class="card-producto-nombre">Plátano de seda</h3>
+                  <p class="card-producto-desc">Venta por kilo</p>
+                  <div class="card-producto-precio"><span class="precio-actual">S/ 4.50</span></div>
+                  <div class="card-producto-cantidad"><span style="font-size:12px;">Cantidad</span><div class="cantidad-control"><button class="btn-qty">−</button><input type="number" value="1" min="1" class="qty-input"><button class="btn-qty">+</button></div></div>
+                  <button class="btn btn-agregar" onclick="agregarAlCarrito(8)"><i class="fa-solid fa-plus me-1"></i> Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-muted mt-3" style="font-size:12px;">Ofertas válidas hasta agotar stock. En productos a granel, el total puede variar según el peso final.</p>
+
+          <!-- Paginación -->
+          <nav aria-label="Paginación de productos" class="mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-muted" style="font-size:13px;">Página 1 de 17</span>
+              <ul class="pagination mb-0">
+                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">…</a></li>
+                <li class="page-item"><a class="page-link" href="#">17</a></li>
+                <li class="page-item"><a class="page-link" href="#" aria-label="Siguiente">Siguiente <i class="fa-solid fa-chevron-right ms-1"></i></a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- BENEFICIOS -->
+  <section class="section-beneficios">
+    <div class="container-main">
+      <div class="row g-4 text-center">
+        <div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-truck-fast beneficio-icon"></i><h3>De nuestra tienda a tu puerta</h3><p>Elige tu dirección y revisa la cobertura.</p></div></div>
+        <div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-leaf beneficio-icon"></i><h3>Frescura que se nota</h3><p>Seleccionamos cada producto para ti.</p></div></div>
+        <div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-shield-check beneficio-icon"></i><h3>Compra con tranquilidad</h3><p>Tus datos y pagos siempre protegidos.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-main">
+    <div class="container-main">
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="footer-logo d-flex align-items-center mb-3"><i class="fa-solid fa-basket-shopping logo-icon"></i><div class="logo-text"><span class="logo-mini">MINIMARKET</span><span class="logo-name">ESCOBAR</span></div></div>
+          <p class="footer-desc">Lo que necesitas, cerca de ti. Calidad, frescura y la atención de tu minimarket de confianza.</p>
+          <div class="footer-social"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></div>
+        </div>
+        <div class="col-md-3"><h4>Compra con nosotros</h4><ul class="footer-links"><li><a href="categorias.html">Todas las categorías</a></li><li><a href="ofertas.html">Ofertas de la semana</a></li><li><a href="recetas.html">Recetas para inspirarte</a></li><li><a href="mis-listas.html">Mis listas de compras</a></li></ul></div>
+        <div class="col-md-3"><h4>¿Cómo te ayudamos?</h4><ul class="footer-links"><li><a href="#">Despachos y cobertura</a></li><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Cambios y devoluciones</a></li><li><a href="#">Términos y condiciones</a></li></ul></div>
+        <div class="col-md-3"><h4>Estamos para ayudarte</h4><p><i class="fa-regular fa-envelope me-2"></i> hola@minimarketescobar.cl</p><p>Lunes a domingo<br>8:00 a 22:00 h</p><a href="#" class="footer-chat"><i class="fa-regular fa-comment me-1"></i> Conversemos</a></div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+        <span>© 2026 Minimarket Escobar. Todos los derechos reservados.</span>
+        <div class="footer-payment"><i class="fa-solid fa-lock me-1"></i> Pago seguro <span class="ms-2 fw-bold">VISA</span> <span class="ms-1 fw-bold">Mastercard</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

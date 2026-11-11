@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Pedido exitoso! · Minimarket Escobar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="top-bar"><div class="container-main d-flex justify-content-between align-items-center"><span><i class="fa-solid fa-seedling me-1"></i> Tu minimarket de siempre, ahora más cerca.</span><span><i class="fa-regular fa-clock me-1"></i> Todos los días · 8:00 a 22:00</span></div></div>
+  <header class="header-main"><div class="container-main d-flex align-items-center justify-content-between"><a href="index.html" class="logo d-flex align-items-center text-decoration-none"><i class="fa-solid fa-basket-shopping logo-icon"></i><div class="logo-text"><span class="logo-mini">MINIMARKET</span><span class="logo-name">ESCOBAR</span></div></a><div class="header-search d-none d-lg-flex"><input type="text" class="form-control" placeholder="¿Qué necesitas para hoy?"><button class="btn btn-search"><i class="fa-solid fa-magnifying-glass"></i></button></div><div class="header-actions d-flex align-items-center gap-3"><a href="login.html" class="header-account d-none d-md-flex align-items-center text-decoration-none"><i class="fa-regular fa-user me-2"></i><div><small class="d-block text-muted" style="font-size:11px;">Hola, bienvenido</small><span class="fw-semibold" style="font-size:14px;">Mi cuenta</span></div></a></div></div></header>
+  <nav class="navbar-main"><div class="container-main"><ul class="nav-links d-flex align-items-center gap-4 mb-0 list-unstyled"><li><a href="index.html" class="nav-link active">Inicio</a></li><li><a href="recetas.html" class="nav-link">Recetas</a></li><li><a href="mis-listas.html" class="nav-link">Mis listas</a></li><li><a href="categorias.html" class="nav-link"><i class="fa-solid fa-grid-2 me-1"></i> Categorías</a></li><li><a href="ofertas.html" class="nav-link nav-ofertas"><i class="fa-solid fa-tag me-1"></i> Ofertas</a></li></ul></div></nav>
+
+  <main class="section-pago-exitoso">
+    <div class="container-main">
+      <div class="pago-exitoso-card">
+        <!-- Ícono de éxito -->
+        <div class="text-center mb-4">
+          <div class="exito-icon"><i class="fa-solid fa-check"></i></div>
+          <h1 class="exito-titulo">¡Pedido realizado con éxito!</h1>
+          <p class="text-muted">Gracias por comprar en Minimarket Escobar.</p>
+          <p class="fw-bold" style="font-size:18px;">Pedido N.° ME-2026-001248</p>
+          <small class="text-muted">Pedido de ejemplo · confirmación ilustrativa</small>
+        </div>
+
+        <!-- Info de entrega y pago -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="info-box">
+              <h3 class="fw-semibold">Dirección de entrega</h3>
+              <p class="fw-bold mb-1">Ana Escobar</p>
+              <p class="mb-0">Av. Los Jardines 123, Dpto. 201<br>San Juan de Lurigancho, Lima<br>Frente al parque</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-box">
+              <h3 class="fw-semibold">Método de pago</h3>
+              <p class="fw-bold mb-1 text-decoration-underline">Tarjeta · terminada en 4242</p>
+              <p class="mb-0">Delivery · S/ 6.00<br><small class="text-muted">No se ha realizado ningún cobro real.</small></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumen del pedido -->
+        <h2 class="fw-bold mb-3">Resumen de tu pedido</h2>
+        <p class="text-muted mb-3">4 productos · 6 unidades</p>
+
+        <table class="table" aria-label="Detalle del pedido">
+          <tbody>
+            <tr><td class="fw-semibold">Palta Hass</td><td class="text-muted">1 kg</td><td class="text-end fw-bold">S/ 10.00</td></tr>
+            <tr><td class="fw-semibold">Leche entera</td><td class="text-muted">2 cajas · 1 litro</td><td class="text-end fw-bold">S/ 17.00</td></tr>
+            <tr><td class="fw-semibold">Huevos de campo</td><td class="text-muted">1 bandeja · 12 unidades</td><td class="text-end fw-bold">S/ 11.57</td></tr>
+            <tr><td class="fw-semibold">Pasta espirales</td><td class="text-muted">2 bolsas · 400 g</td><td class="text-end fw-bold">S/ 9.00</td></tr>
+          </tbody>
+        </table>
+
+        <hr>
+        <div class="resumen-linea"><span class="text-muted">Subtotal</span><span>S/ 47.57</span></div>
+        <div class="resumen-linea"><span class="text-muted">Costo de envío · Delivery</span><span>S/ 6.00</span></div>
+        <div class="resumen-linea"><span class="text-muted">Descuentos</span><span>S/ 0.00</span></div>
+        <div class="resumen-total-box">
+          <span class="fw-bold" style="font-size:18px;">Total</span>
+          <span class="resumen-total-precio">S/ 53.57</span>
+        </div>
+        <small class="text-muted d-block mb-4">Precios incluyen IGV.</small>
+
+        <!-- Botones -->
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="index.html" class="btn btn-primary-custom btn-lg px-5">Volver al inicio <i class="fa-solid fa-arrow-right ms-2"></i></a>
+          <a href="#" class="btn btn-outline-secondary btn-lg px-5">Ver mis pedidos</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="section-beneficios"><div class="container-main"><div class="row g-4 text-center"><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-truck-fast beneficio-icon"></i><h3>De nuestra tienda a tu puerta</h3><p>Elige tu dirección y revisa la cobertura.</p></div></div><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-leaf beneficio-icon"></i><h3>Frescura que se nota</h3><p>Seleccionamos cada producto para ti.</p></div></div><div class="col-md-4"><div class="beneficio-item"><i class="fa-solid fa-shield-check beneficio-icon"></i><h3>Compra con tranquilidad</h3><p>Tus datos y pagos siempre protegidos.</p></div></div></div></div></section>
+  <footer class="footer-main"><div class="container-main"><div class="row g-4"><div class="col-md-3"><div class="footer-logo d-flex align-items-center mb-3"><i class="fa-solid fa-basket-shopping logo-icon"></i><div class="logo-text"><span class="logo-mini">MINIMARKET</span><span class="logo-name">ESCOBAR</span></div></div><p class="footer-desc">Lo que necesitas, cerca de ti.</p><div class="footer-social"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-facebook"></i></a></div></div><div class="col-md-3"><h4>Compra con nosotros</h4><ul class="footer-links"><li><a href="categorias.html">Todas las categorías</a></li><li><a href="ofertas.html">Ofertas de la semana</a></li><li><a href="recetas.html">Recetas para inspirarte</a></li><li><a href="mis-listas.html">Mis listas de compras</a></li></ul></div><div class="col-md-3"><h4>¿Cómo te ayudamos?</h4><ul class="footer-links"><li><a href="#">Despachos y cobertura</a></li><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Cambios y devoluciones</a></li><li><a href="#">Términos y condiciones</a></li></ul></div><div class="col-md-3"><h4>Estamos para ayudarte</h4><p><i class="fa-regular fa-envelope me-2"></i> hola@minimarketescobar.cl</p><p>Lunes a domingo · 8:00 a 22:00 h</p></div></div><hr class="footer-divider"><div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap"><span>© 2026 Minimarket Escobar.</span><div class="footer-payment"><i class="fa-solid fa-lock me-1"></i> Pago seguro <span class="ms-2 fw-bold">VISA Mastercard</span></div></div></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
